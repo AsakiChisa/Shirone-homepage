@@ -1,0 +1,29 @@
+Chisa · Shirone 定制版（基于用户上传的原始完整源码）
+
+已完成：站点名称/主域名/中文/横幅文字/个人资料/GitHub 头像；三个公开项目和罗盘导航；
+演示文章改为 Chisa 自己的「欢迎来到 Chisa」首篇文章（保留一篇以确保首页仍有分页路由）；
+清空原作者的相册、说说、系列、友链、设备、技能、时间线、番剧和音乐演示数据；
+移除旧的演示相册和说说图片，关闭未配置个人曲目的音乐播放器；保留所有页面组件及功能。
+
+尚未替换：背景图（用户稍后提供）。当前仍是原来的横幅；上传后修改：
+src/config/siteConfig.ts 的 banner.src.desktop/mobile 两个图片数组，建议用 public/images/chisa-banner.webp，
+配置为 desktop: ["/images/chisa-banner.webp"], mobile: ["/images/chisa-banner.webp"]。
+未包含 Git 历史 / .git 目录：避免将原仓库元数据、分支信息或远端信息打进公开分享的代码包。
+
+部署到已存在的 GitHub 仓库 AsakiChisa/Shirone-homepage：
+1. 强烈建议先在 GitHub 创建 chisa-custom 分支，或备份 main 分支。
+2. 将压缩包中的文件按原目录结构上传/覆盖到 chisa-custom，删除仓库原来的演示文章、相册、动态等未包含文件
+   （注意：GitHub 网页上传不会自动删除同名目录中已经存在但包内缺失的文件）。
+   推荐：本地 git clone 后，在本地仓库中用此源码覆盖，手动删除原演示目录内容，再提交；
+   或创建一个新仓库提交此包全部源码，在 Cloudflare 将 Git 连接切换为新仓库（不可直接自动上传本包）。
+3. Cloudflare Workers 项目（已绑定 chisa.uk）保留现有配置：
+   主分支 main；构建命令 pnpm build；生产部署命令：
+   npx wrangler deploy --assets ./dist --name shirone-homepage --compatibility-date 2026-09-21
+   非生产分支版本命令：
+   npx wrangler versions upload --assets ./dist --name shirone-homepage --compatibility-date 2026-09-21
+   环境变量 NODE_VERSION=22（须满足最低 22.12 版本）。
+4. 在预览分支确认新内容显示正常，再合并 main 触发正式部署。保留旧 Workers 版本用于回滚。
+5. 不要将没有必要的 .env、密钥、访问令牌或服务器后台链接添加到公开仓库。
+
+如需本地验证，请在 Node.js >=22.12 环境运行：corepack enable && pnpm install --frozen-lockfile && pnpm build。
+注意：本工具执行环境没有项目依赖及 pnpm，未实际完成 Astro 生产构建；发布前请以 Cloudflare 构建结果为准。

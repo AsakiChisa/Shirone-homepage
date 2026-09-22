@@ -37,83 +37,14 @@ export interface CompassShelf {
 
 export const compassData: CompassShelf[] = [
 	{
-		key: "dev",
-		name: "Development",
-		icon: "material-symbols:code-rounded",
-		blurb: "Sites I keep open while writing code",
+		key: "chisa-sites", name: "Chisa 的网站",
+		icon: "material-symbols:language-rounded",
+		blurb: "个人公开项目与常用入口",
 		entries: [
-			{
-				label: "GitHub",
-				href: "https://github.com",
-				note: "Code hosting & collaboration",
-				icon: "fa6-brands:github",
-			},
-			{
-				label: "MDN",
-				href: "https://developer.mozilla.org",
-				note: "Authoritative web docs",
-				icon: "material-symbols:menu-book-rounded",
-			},
-			{
-				label: "Stack Overflow",
-				href: "https://stackoverflow.com",
-				note: "Q&A and debugging",
-			},
-		],
-	},
-	{
-		key: "design",
-		name: "Design",
-		icon: "material-symbols:palette-outline-rounded",
-		blurb: "Colors, icons and inspiration",
-		entries: [
-			{
-				label: "Iconify",
-				href: "https://icon-sets.iconify.design",
-				note: "Searchable open-source icon sets",
-			},
-			{
-				label: "Material Symbols",
-				href: "https://fonts.google.com/icons",
-				note: "Official M3 icon set",
-				icon: "material-symbols:star-rounded",
-			},
-			{
-				label: "Excalidraw",
-				href: "https://excalidraw.com",
-				note: "Hand-drawn whiteboard collaboration",
-			},
-		],
-	},
-	{
-		key: "tools",
-		name: "Tools",
-		icon: "material-symbols:build-outline-rounded",
-		entries: [
-			{
-				label: "Squoosh",
-				href: "https://squoosh.app",
-				note: "Image compression & conversion",
-			},
-			{
-				label: "Regex101",
-				href: "https://regex101.com",
-				note: "Regex testing & debugging",
-			},
-		],
-	},
-	{
-		key: "reads",
-		name: "Reading",
-		icon: "material-symbols:auto-stories-outline-rounded",
-		entries: [
-			{ label: "Hacker News", href: "https://news.ycombinator.com" },
-			{ label: "V2EX", href: "https://www.v2ex.com" },
-			{
-				label: "Solidot",
-				href: "https://www.solidot.org",
-				note: "Tech and culture news",
-			},
+			{ label: "飞鼠格式化站", href: "https://format.chisa.wiki", note: "在线格式转换", icon: "material-symbols:deployed-code-outline-rounded" },
+			{ label: "Chisa 导航", href: "https://nav.chisa.wiki", note: "常用网站与工具", icon: "material-symbols:explore-rounded" },
+			{ label: "Chisa Server Status", href: "https://status.chisa.wiki", note: "服务器状态", icon: "material-symbols:dns-rounded" },
+			{ label: "GitHub", href: "https://github.com/AsakiChisa", note: "代码与项目", icon: "fa6-brands:github" },
 		],
 	},
 ];

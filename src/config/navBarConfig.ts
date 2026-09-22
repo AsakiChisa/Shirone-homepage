@@ -130,7 +130,7 @@ export const LinkPresets: Record<string, NavBarLink> = {
 	},
 	GitHub: {
 		name: "GitHub",
-		url: "https://github.com/LyraVoid/Shirone",
+		url: "https://github.com/AsakiChisa",
 		icon: "fa6-brands:github",
 		external: true,
 		pageKey: "github",
@@ -140,6 +140,7 @@ export const LinkPresets: Record<string, NavBarLink> = {
 const defaultNavBarConfig: NavBarConfig = {
 	links: [
 		LinkPresets.Home,
+		LinkPresets.Projects,
 		LinkPresets.Archive,
 		LinkPresets.Friends,
 		LinkPresets.Moments,
@@ -151,7 +152,6 @@ const defaultNavBarConfig: NavBarConfig = {
 			icon: "material-symbols:apps-rounded",
 			children: [
 				LinkPresets.Timeline,
-				LinkPresets.Projects,
 				LinkPresets.Devices,
 				LinkPresets.Games,
 				LinkPresets.Skills,

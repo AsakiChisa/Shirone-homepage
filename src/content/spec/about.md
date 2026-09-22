@@ -1,26 +1,15 @@
-# About Shirone
+# 关于 Chisa
 
-Welcome to the demo site of **Shirone** (白音) — an expressive, anime-inspired blog theme built on the **Material 3 Expressive (M3E)** design system.
+你好，欢迎来到我的个人主页。
 
-::github{repo="LyraVoid/Shirone"}
+**在数字世界里，创造属于自己的小天地。**
 
-## ✦ Design & Philosophy
+我平时喜欢研究服务器、VPS、网络、AI 和数码设备，也喜欢游戏和二次元。这是我整理项目、技术笔记和生活记录的地方。
 
-Shirone aims to combine the warmth of expressive anime aesthetics with the rigor of modern web engineering:
+## 我的项目
 
-- **Dynamic Chromatic Spell**: Full dynamic HCT palette generation responding seamlessly to light/dark modes and user preferences with zero layout shifts.
-- **Seamless Shell Navigation**: Persistent application shell driven by Swup for continuous music playback, smooth page transitions, and preserved state.
-- **Rich Story Grimoire**: Markdown and MDX authoring with KaTeX math, Mermaid diagrams, interactive admonitions, expressive code blocks, and adaptive image galleries.
-- **Zero Extra Burden**: Optional integrations (comments, analytics, music widgets) load dynamically on demand — zero DOM footprint and zero bundle overhead when disabled.
+- [飞鼠格式化站](https://format.chisa.wiki/) — 在线格式转换工具。
+- [Chisa 导航](https://nav.chisa.wiki/) — 个人导航与网站收藏。
+- [Chisa Server Status](https://status.chisa.wiki/) — 服务器状态展示。
 
-## ✦ Tech Stack
-
-- **Framework**: [Astro 7](https://astro.build/) & [Svelte 5](https://svelte.dev/) (Runes-driven islands)
-- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) & [Stylus](https://stylus-lang.com/)
-- **Design Standard**: [Material 3 Expressive](https://m3.material.io/)
-- **Typography**: Outfit & Yozai (悠哉圆体) with automated build-time subsetting
-- **Search Engine**: [Pagefind](https://pagefind.app/) offline full-text search
-
-## ✦ Credits
-
-- **Font**: [Yozai Font (悠哉字体)](https://github.com/lxgw/yozai-font) by [lxgw](https://github.com/lxgw)
+也可以查看 [项目展示](/projects/) 或访问我的 [GitHub](https://github.com/AsakiChisa)。
