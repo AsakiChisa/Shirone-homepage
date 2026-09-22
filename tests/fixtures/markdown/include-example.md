@@ -1,6 +1,6 @@
 ## Included API
 
-This paragraph is expanded from a neighboring Markdown file.
+This paragraph is expanded from a test-only Markdown fixture.
 
 <!-- #region public-api -->
 ```ts
