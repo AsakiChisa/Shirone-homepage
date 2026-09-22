@@ -8,7 +8,10 @@ import { getSortedPosts } from "../utils/content-utils";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allBlogPosts = await getSortedPosts();
-	return paginate(allBlogPosts, { pageSize: postListConfig.pageSize });
+	// 首页由 index.astro 负责：即使 0 篇文章也有静态主页；这里仅生成第 2 页起的分页。
+	if (allBlogPosts.length <= postListConfig.pageSize) return [];
+	return paginate(allBlogPosts, { pageSize: postListConfig.pageSize })
+		.filter(({ params }) => Number(params.page ?? 1) >= 2);
 }) satisfies GetStaticPaths;
 // https://github.com/withastro/astro/issues/6507#issuecomment-1489916992
 

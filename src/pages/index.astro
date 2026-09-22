@@ -1,0 +1,39 @@
+---
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import PostPage from "@components/organisms/PostPage.astro";
+import { postListConfig } from "@/config/postListConfig";
+import { getSortedPosts } from "@utils/content-utils";
+
+const posts = await getSortedPosts();
+const firstPage = posts.slice(0, postListConfig.pageSize);
+const hasMore = posts.length > postListConfig.pageSize;
+---
+
+<MainGridLayout page="home">
+  {firstPage.length > 0 ? (
+    <>
+      <PostPage page={{ data: firstPage }} />
+      {hasMore && <nav class="chisa-next-page"><a href="/2/">查看更多文章 →</a></nav>}
+    </>
+  ) : (
+    <section class="chisa-welcome" aria-label="Chisa 主页">
+      <h2>欢迎来到 Chisa 的小天地</h2>
+      <p>这里暂时没有文章。以后想写点什么，再慢慢更新。</p>
+      <p>先来看看我的 <a href="/projects/">项目展示</a>，或者到 <a href="/about/">关于我</a> 了解更多。</p>
+    </section>
+  )}
+</MainGridLayout>
+
+<style>
+.chisa-welcome {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: 1.5rem;
+  background: var(--card-bg, var(--surface-container, #fff));
+  color: var(--on-surface, inherit);
+  line-height: 1.9;
+}
+.chisa-welcome h2 { font-size: clamp(1.25rem, 2vw, 1.7rem); font-weight: 700; margin: 0 0 1rem; }
+.chisa-welcome p { margin: 0 0 .75rem; }
+.chisa-welcome a,.chisa-next-page a { color: var(--primary, #7a478f); text-decoration: underline; text-underline-offset: .2em; }
+.chisa-next-page { padding: 1.2rem; text-align: center; }
+</style>

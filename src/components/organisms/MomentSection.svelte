@@ -204,7 +204,7 @@ onMount(() => {
 	{:else}
 		<div class="moment-section__empty">
 			<Icon icon="material-symbols:search-off-outline-rounded" aria-hidden="true" />
-			<span>{i18n(I18nKey.momentsNoResults)}</span>
+			<span>{moments.length === 0 ? "这里还没有随笔，之后会慢慢更新。" : i18n(I18nKey.momentsNoResults)}</span>
 		</div>
 	{/if}
 </Card>

@@ -134,7 +134,7 @@ onMount(() => {
 	{:else}
 		<div class="album-section__empty">
 			<Icon icon="material-symbols:search-off-rounded" aria-hidden="true" />
-			<span>{i18n(I18nKey.albumsNoResults)}</span>
+			<span>{albums.length === 0 ? "这里暂时没有相片，以后再慢慢添加。" : i18n(I18nKey.albumsNoResults)}</span>
 		</div>
 	{/if}
 </Card>
